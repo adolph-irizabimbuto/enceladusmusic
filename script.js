@@ -30,8 +30,8 @@ function loadSong(song){
     title.innerText = `${song}`;
     let artistOfSong = songs.indexOf(song);
     artist.innerText = `Artist: ${artists[artistOfSong]}`
-    audio.src = `/music/${song}.mp3`;
-    cover.src = `/igm/${song}.jpg`;
+    audio.src = `music/${song}.mp3`;
+    cover.src = `igm/${song}.jpg`;
     
 }
 
