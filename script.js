@@ -12,8 +12,17 @@ const duration = document.querySelector('#duration');
 
 // song Titles
 
-const songs = ['hallelu', 'kolo', 'KPK', 'Titanium'];
-const artists = ['Masterkraft x Zlatan x Bella Shmurda ', 'Ice Prince', "Rexxie, MohBad", "Dave"];
+const songs = ['hallelu', 'kolo', 'KPK', 'Titanium', 'AG Baby','Vibration','Do Not Disturb','Dont Hurt Yourself',
+'Guilt Trip','Hold Yuh','I Feel It Coming','Jesus Walks', 'Will', 'All of the stars', 'Lost In Ya Love','Kontrol', 'Racks In The Middle',
+'Dont Touch My Hair', 'Damages', 'After Hours', 'Blinding Lights', 'The Hills', 'Touchin Lovin', 'Warm', 'Come Closer', 'How It Is',
+'U Wit Me','Look Over Your Shoulder','Gyal You A Party Animal','Bad','SAD!'];
+
+
+
+const artists = ['Masterkraft x Zlatan x Bella Shmurda ', 'Ice Prince', "Rexxie, MohBad", "Dave",'Adekunde Gold', 'Fireboy DML', 'Drake','Beyonce',
+'Kanye West', 'Gyptian', 'The Weeknd', 'Kanye West', 'Joyner Lucas','SZA & Kendrick Lamar','Chris Brown','Maleek Berry','Nipsey Hussle (ft.Roddy Rich', 
+'Solange Knowles','TEMS','The Weeknd','The Weeknd','The Weeknd','Trey Songz (ft. Nicki Minaj)','Majid Jordan','Wizkid (ft. Drake)', 'Young Thug'
+,'Drake','Busta Rhymes (ft. Kendrick Lamar)','Charly Black','Juls Baby (feat Not3s Kojo Funds Eugy)','XXXTENTACION'];
 
 
 // keep track of songs 
