@@ -9,6 +9,8 @@ const title = document.querySelector('#title');
 const artist = document.querySelector('#artist')
 const cover = document.querySelector('#cover');
 const duration = document.querySelector('#duration');
+const switch1 = document.getElementById('customSwitch');
+const siteTitle = document.getElementById('site-title');
 
 // song Titles
 
@@ -138,7 +140,37 @@ audio.addEventListener('timeupdate', (event) => {
     duration.innerText = `${currentTime}`
 }, true);
 
+// handle Volume
 
+let volume = document.querySelector("#volume-control");
+volume.addEventListener("change", function(e) {
+audio.volume = e.currentTarget.value / 100;
+});
 
-// update duration 
+// handle dark mode 
+
+function handleDarkMode(){
+    if(switch1.checked == true){
+    siteTitle.style.color = 'white';
+    document.getElementById('body').style.backgroundColor = 'black'
+    document.getElementById('musicContainer').style.backgroundColor = 'grey'
+    title.style.color = 'white'
+    artist.style.color = 'white'
+    document.getElementById('musicInfo').style.backgroundColor = 'transparent'
+    document.getElementById('toggleMessage').innerHTML = 'Turn Dark Mode OFF';
+    document.getElementById('toggleMessage').style.color = 'grey'
+    
+    } else {
+    siteTitle.style.color = 'black';
+    document.getElementById('body').style.backgroundColor = 'white'
+    document.getElementById('musicContainer').style.backgroundColor = 'white'
+    title.style.color = 'black'
+    artist.style.color = 'black'
+    document.getElementById('musicInfo').style.backgroundColor = 'transparent'
+    document.getElementById('toggleMessage').innerHTML = 'Turn Dark Mode ON';
+    
+}
+
+}
+    
 
