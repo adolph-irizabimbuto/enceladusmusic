@@ -142,10 +142,7 @@ audio.addEventListener('timeupdate', (event) => {
 
 // handle Volume
 
-let volume = document.querySelector("#volume-control");
-volume.addEventListener("change", function(e) {
-audio.volume = e.currentTarget.value / 100;
-});
+
 
 // handle dark mode 
 
@@ -170,7 +167,5 @@ function handleDarkMode(){
     document.getElementById('toggleMessage').innerHTML = 'Turn Dark Mode ON';
     
 }
-
 }
-    
 

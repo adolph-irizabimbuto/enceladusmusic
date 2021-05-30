@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+   
     
 </head>
 <body id="body">
@@ -61,7 +62,13 @@
 
     <script src="script.js">
     </script>
-   
+
+<script type="application/javascript">
+    function getIP(json) {
+      document.write("Hello, ", json.ip, ", how is your day :)");
+    }
+  </script>
+   <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
 </body>
 <!-- by adolph -->
