@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nato Alphabet</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+  <script src="nato.js"></script>
+</head>
+
+<style>
+.navbar {
+background-color: #3d6bf5;
+color: white;
+background-image: none;
+}
+ 
+.nav.navbar-nav.navbar-light li a {
+    color: white;
+}
+.custom-toggler.navbar-toggler {
+    border-color: lightgreen;
+}
+
+input, textarea{
+border-color: #dc3545;
+color: #dc3545;
+border-style:outset;
+}
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-md bg-blue navbar-dark w-100">
+    <a class="navbar-brand" href="index.html">azula</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse w-100" id="collapsibleNavbar">
+            <ul class="nav navbar-nav nav-fill w-100" >
+                <li><a class = "nav-item nav-link px-2"href="music.html">Enceladus Music</a></li>
+                <li><a class = "nav-item nav-link px-2"href="josephus.html">The Josephus Problem</a></li>
+                <li><a class = "nav-item nav-link px-2"href="poerty.html">Poetry</a></li>
+                <li><a class = "nav-item nav-link px-2"href="writting.html">Writting</a></li>
+                <li><a class = "nav-item nav-link px-2"href="nato.html">Nato Alphabet</a></li>
+                <li><a class = "nav-item nav-link px-2"href="binary.html">Binary Converter</a></li>
+            </ul>
+        
+    </div>  
+</nav>
+
+  <div class="jumbotron">
+    <h3>Nato Alphabet</h3>
+  </div>
+
+  <div class="container">
+    <br>
+    <br>
+    <p>
+        For the Pilots and the rest of us.
+        <br><br>
+        enter a word or phrase and click "Convert",
+        <br>
+        to convert word or phrase to the Nato Phonetic Alphabet. 
+      <br>
+      
+    </p>
+    <br>
+
+    <div class="container ">
+      <div class="input-group mb-3">
+        <input id= "usertext" class="primary" type="text" class="form-control" placeholder="enter a number">
+        <div class="input-group-append">
+          <button onclick="natoAlphabet()" class="btn btn-outline-primary" type="button">convert</button>  
+        </div>
+      </div>
+    </div>
+
+    <div class="container p-3 my-3 bg-primary text-white rounded">
+      <p class="text-center" id="natoText"></p>
+     </div>
+  </div>
+</body>
+</html>

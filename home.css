@@ -1,0 +1,24 @@
+
+
+#img{
+    width: 100%;
+    height: 7rem;
+    object-fit: cover;
+    border-radius: 0%;
+}
+
+#link-card{
+    width: 10rem;
+    height: 15rem;
+}
+
+
+
+
+#dashboard{
+    margin: 2rem 0rem 0rem 0rem;
+}
+
+#title{
+    margin: 1rem 0 0 -0rem;
+}

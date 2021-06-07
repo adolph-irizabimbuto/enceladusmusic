@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enceladus Music</title>
+    <meta name="keywords" content="Enceladus, Music, Adolph, Astronomy">
+    <meta name ="description" content = "a mix between my love for music and my love for Astronomy, well my love for Enceladus to be specific "> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body id="body">
+
+    <nav class="navbar navbar-expand-md bg-blue navbar-dark w-100">
+        <a class="navbar-brand" href="index.html">azula</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse w-100" id="collapsibleNavbar">
+                <ul class="nav navbar-nav nav-fill w-100" >
+                    <li><a class = "nav-item nav-link px-2"href="music.html">Enceladus Music</a></li>
+                    <li><a class = "nav-item nav-link px-2"href="josephus.html">The Josephus Problem</a></li>
+                    <li><a class = "nav-item nav-link px-2"href="poerty.html">Poetry</a></li>
+                    <li><a class = "nav-item nav-link px-2"href="writting.html">Writting</a></li>
+                    <li><a class = "nav-item nav-link px-2"href="nato.html">Nato Alphabet</a></li>
+                    <li><a class = "nav-item nav-link px-2"href="binary.html">Binary Converter</a></li>
+                </ul>
+            
+        </div>  
+    </nav>
+
+    <h3 style="margin-bottom: 4rem;" id="site-title">Enceladus Music</h1>
+
+
+    <div class="music-container" id="musicContainer">
+        <div class="music-info" id="musicInfo">
+            <i>
+                <h7 id="artist"></h3>
+            </i>
+            <h3 id="title" >Ukelele</h4> 
+            
+            <div class="progress-container">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+        <audio src="gmusic/yt1s.com - Titanium.mp3" id="audio"></audio>
+
+        <div class="img-container">
+            <img src="igm/efe02ba414043d7b0443b6179f0c71e4.1000x1000x1.jpg" alt="music-cover"
+            id="cover">
+        </div>
+
+        <div class="navigation">
+            <button id="prev" class="action-btn" style="background-color: transparent;">
+                <i class="fas fa-backward";></i>
+            </button>
+
+            <button id="play" class="action-btn action-btn-big">
+                <i class="fas fa-play"></i>
+            </button>
+
+            <button id="next" class="action-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+    </div>
+    
+    
+    <div class="form-group" style="margin:-4rem 0 0 0rem">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="customSwitch" checked="" onchange="handleDarkMode()">
+          <label class="custom-control-label" for="customSwitch" id="toggleMessage" >Turn Dark Mode ON</label>
+        </div>
+
+    </div>    
+
+    <script src="script.js">
+    </script>
+
+
+</body>
+<!-- by adolph -->
+</html>
