@@ -51,17 +51,46 @@
 	color: red;
 }
 
+#picContainer{
+	margin-left: 18%;
+}
+
+#contain{
+	margin-top: 1.25rem; margin-left: 10%;
+}
+#logout{
+	margin-top: -5rem; margin-left: 8rem; margin-bottom: 2rem;
+	margin-left: 60rem;
+}
 
 
-@media only screen and (min-width: 768px) {
-	.columns{
-		margin-left: 10rem;
-	}
-	#peopleContain{
-		margin-left: 12.5rem;
-		
-	}
-	
+@media only screen and (max-width: 600px) {
+
+	#picContainer{
+		margin-left: 0rem;
   }
-  
+  	#contain{
+		  margin-left: 0rem;
+	  }
+}
+@media only screen and (min-width: 1900px) {
+
+	#picContainer{
+		margin-left: 18%;
+  }
+  	#contain{
+		  margin-left: 15%;
+	  }
+
+}
+@media only screen and (min-width: 2400px) {
+
+	#picContainer{
+		margin-left: 25%;
+  }
+  	#contain{
+		  margin-left: 25%;
+	  }
+
+}
  

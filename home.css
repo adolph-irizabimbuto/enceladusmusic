@@ -12,6 +12,32 @@
     height: 15rem;
 }
 
+.container {
+    width: 90%;
+}
+@media only screen and (min-width:800px) {
+    #mainPanel{
+        margin-left: 40rem;
+        margin-right:  40rem;
+    }
+
+} 
+@media only screen and (min-width:2400px) {
+    #mainPanel{
+        margin-left: 60rem;
+        margin-right:  60rem;
+    }
+
+}
+/*     
+@media only screen and (min-width:600px) {
+    #mainPanel{
+        margin-left: 7em;
+        margin-right: 7rem;
+    }
+
+}   */
+
 
 
 
