@@ -21,5 +21,5 @@ function binaryConvertor(number) {
 function displayBinary() {
     let userText  = document.getElementById('usertext').value;
     let userOutput = document.getElementById('binaryText');
-    userOutput.innerHTML = binaryConvertor(userText);
+    userOutput.innerHTML =  userText + " in Binary is <br><br>"+ binaryConvertor(userText).fontsize(20).fontcolor("lightblue");
 }

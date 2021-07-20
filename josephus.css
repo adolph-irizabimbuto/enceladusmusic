@@ -73,6 +73,21 @@
 		  margin-left: 0rem;
 	  }
 }
+@media only screen and (min-width: 1400px) {
+
+	#picContainer{
+		margin-left: 6%;
+		margin-top: 5rem ;
+  }
+  	#contain{
+		  margin-left: 9%;
+	  }
+	
+	  #logout{
+		  margin-left: 40rem;
+	  }
+
+}
 @media only screen and (min-width: 1900px) {
 
 	#picContainer{

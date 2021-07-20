@@ -29,7 +29,7 @@ const artists = ['Masterkraft x Zlatan x Bella Shmurda ', 'Ice Prince', "Rexxie,
 
 // keep track of songs 
 
-let songIndex = 1;
+let songIndex = 5;
 let timeElapsed = 0;
 
 // intially load song into DOM 
