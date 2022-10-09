@@ -9,27 +9,29 @@ const title = document.querySelector('#title');
 const artist = document.querySelector('#artist')
 const cover = document.querySelector('#cover');
 const duration = document.querySelector('#duration');
-const switch1 = document.getElementById('customSwitch');
+const darkmode = document.getElementById('darkmode');
 const siteTitle = document.getElementById('site-title');
 
-// song Titles
-
-const songs = ['hallelu', 'kolo', 'KPK', 'Titanium', 'AG Baby','Vibration','Do Not Disturb','Dont Hurt Yourself',
-'Guilt Trip','Hold Yuh','I Feel It Coming','Jesus Walks', 'Will', 'All of the stars', 'Lost In Ya Love','Kontrol', 'Racks In The Middle',
-'Dont Touch My Hair', 'Damages', 'After Hours', 'Blinding Lights', 'The Hills', 'Touchin Lovin', 'Warm', 'Come Closer', 'How It Is',
-'U Wit Me','Look Over Your Shoulder','Gyal You A Party Animal','Bad','SAD!'];
+const songs = ['Hari Ukuntu','Switch It Up','Recognize','Soso','VXLENTINE','XO','No Wahala','Southy Love','Propeller','Only You', 'Exchange','Been That Way','Your Body','Just Dance (sped up)','Eko Miami','Back It Up','Bend It','CUFF IT','As Friends', 
+'Bandana','Bloody Samaritan','Bounce','Don\'t Rush','Tampa','Calm Down','Rackz got më','Preach','Pussy Power','WAIT FOR U','Rush','KU LO SA','MONALISA','Want You',
+'Peru','Soweto','Nzaza','Cold Outside','Okay','Pana','It’s Plenty','Sip','Must Be Sprung','Energy','Mad Over You','TLC','The Matter','Might Not','Starboy','Streatham','Titanium', 
+'AG Baby','Vibration','Hold Yuh','Lost In Ya Love','Kontrol','Damages', 'After Hours','The Hills', 'Touchin Lovin','How It Is','U Wit Me','Strike A Pose','Gyal You A Party Animal','SAD!'];
 
 
 
-const artists = ['Masterkraft x Zlatan x Bella Shmurda ', 'Ice Prince', "Rexxie, MohBad", "Dave",'Adekunde Gold', 'Fireboy DML', 'Drake','Beyonce',
-'Kanye West', 'Gyptian', 'The Weeknd', 'Kanye West', 'Joyner Lucas','SZA & Kendrick Lamar','Chris Brown','Maleek Berry','Nipsey Hussle (ft.Roddy Rich', 
-'Solange Knowles','TEMS','The Weeknd','The Weeknd','The Weeknd','Trey Songz (ft. Nicki Minaj)','Majid Jordan','Wizkid (ft. Drake)', 'Young Thug'
-,'Drake','Busta Rhymes (ft. Kendrick Lamar)','Charly Black','Juls Baby (feat Not3s Kojo Funds Eugy)','XXXTENTACION'];
+const artists = ['King James','Pooh Shiesty x G Herbo x No More Heroes', 'PARTYNEXTDOOR (ft Drake)','Omah Lay','Ayo Kuru','Jay-O','1da Banton','Peruzzi (ft Fireboy DML)','Dave & BNXN', 'PARTYNEXTDOOR', "Bryson Tiller", 'Bryson Tiller','Basketmouth (ft Buju)', 'Lady Gaga', 'Maleek Berry','Ms Banks (ft Geko)', 'Maleek Berry','Beyonce',
+'Gabzy', 'Fireboy DML (ft Asake)','Ayra Starr','Ruger','Young T & Bugsey (ft Headie One)','Cico P','Rema','Yeat','Drake','Gunna (ft Drake)','Future (ft Tems & Drake)','Ayra Starr',
+'Oxlaide','LOJAY X SARZ','Fireboy DML (ft Asake)','Oxlaide','Fireboy DML','Victony','Asake','Timaya (ft Buju)','Tekno','Burna Boy','Joeboy','Gabzy','Wizkid (ft Skepta)','Runtown','Sy Ari da Kid',
+'Wizkid','Belly (ft The Weeknd)','The Weeknd','Dave','Dave','Adekunle Gold','Fireboy DMl','Gyptian','Chris Brown','Maleek Berry','TEMS','The Weeknd','The Weeknd','The Weeknd','Trey Songz (ft. Nicki Minaj)',
+'Young Thug','Drake','Young T & Bugsey (ft Aitch)','Charly Black','XXXTENTACION'];//
+
+
+//Shuffle Button
 
 
 // keep track of songs 
 
-let songIndex = 5;
+let songIndex = 0;
 let timeElapsed = 0;
 
 // intially load song into DOM 
@@ -41,12 +43,12 @@ function loadSong(song){
     title.innerText = `${song}`;
     let artistOfSong = songs.indexOf(song);
     artist.innerText = `Artist: ${artists[artistOfSong]}`
-    audio.src = `music/${song}.mp3`;
-    cover.src = `igm/${song}.jpg`;
+    audio.src = `/assets/music/${song}.mp3`;
+    cover.src = `/assets/images/music/${song}.jpg`;
     
 }
 
-// Pay Song
+// Play Song
 function playSong(){
     musicContaier.classList.add('play')
     playButton.querySelector('i.fas').classList.remove('fa-play');
@@ -54,6 +56,14 @@ function playSong(){
     audio.play()
     
 }   
+// Pause Song
+function pauseSong(){
+    musicContaier.classList.remove('play')
+    playButton.querySelector('i.fas').classList.add('fa-play');
+    playButton.querySelector('i.fas').classList.remove('fa-pause');
+    audio.pause();
+}
+
 
 // Previous Song
 
@@ -71,6 +81,8 @@ function backSong(){
 // Next Song
 
 function nextSong(){
+    
+    
     songIndex++
     if(songIndex > songs.length -1){
         songIndex = 0;
@@ -90,13 +102,7 @@ function updateProgress(e){
     
 }
 
-// Pause Song
-function pauseSong(){
-    musicContaier.classList.remove('play')
-    playButton.querySelector('i.fas').classList.add('fa-play');
-    playButton.querySelector('i.fas').classList.remove('fa-pause');
-    audio.pause();
-}
+
 
 // Set the Progress bar to whatever the current time is
 function setProgress(e){
@@ -104,9 +110,6 @@ function setProgress(e){
     const clickX = e.offsetX
     const duration = audio.duration
     audio.currentTime = (clickX / width) * duration;
-    
-   
-   
 }
 
 // EVENT LISTENERS
@@ -114,7 +117,6 @@ function setProgress(e){
 // Handle the play Button
 playButton.addEventListener('click', () => {
     const isPlaying = musicContaier.classList.contains('play');
-
     if(isPlaying){
         pauseSong();
     } else {
@@ -133,7 +135,6 @@ progressContainer.addEventListener('click', setProgress)
 // Playing the next song after the current one finsishes playing.
 audio.addEventListener('ended' ,nextSong)
 
-
 audio.addEventListener('timeupdate', (event) => {
     const currentTime = Math.floor(audio.currentTime);
     const duration = Math.floor(audio.duration);
@@ -141,13 +142,11 @@ audio.addEventListener('timeupdate', (event) => {
 }, true);
 
 // handle Volume
-
-
-
+//implement on next update
 // handle dark mode 
 
 function handleDarkMode(){
-    if(switch1.checked == true){
+    if(darkmode.checked == true){
     siteTitle.style.color = 'white';
     document.getElementById('body').style.backgroundColor = 'black'
     document.getElementById('musicContainer').style.backgroundColor = 'grey'
@@ -156,7 +155,9 @@ function handleDarkMode(){
     document.getElementById('musicInfo').style.backgroundColor = 'transparent'
     document.getElementById('toggleMessage').innerHTML = 'Turn Dark Mode OFF';
     document.getElementById('toggleMessage').style.color = 'grey'
-    
+    document.getElementById('madeby').style.color = 'grey'
+
+// song Titles
     } else {
     siteTitle.style.color = 'black';
     document.getElementById('body').style.backgroundColor = 'white'
@@ -164,7 +165,7 @@ function handleDarkMode(){
     title.style.color = 'black'
     artist.style.color = 'black'
     document.getElementById('musicInfo').style.backgroundColor = 'transparent'
-    document.getElementById('toggleMessage').innerHTML = 'Turn Dark Mode ON';
+    document.getElementById('toggleMessage').innerText = 'Turn Dark Mode ON';
     
 }
 }

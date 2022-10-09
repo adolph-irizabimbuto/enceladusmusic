@@ -111,7 +111,6 @@ function startTimer() {
   
 }
 
- 
 document.getElementById("base-timer-path-remaining").style.stroke = remainingPathColor;
 
 function calculateTimeFraction() {
@@ -119,7 +118,6 @@ function calculateTimeFraction() {
   return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
 }
           
-      
 function setCircleDasharray() {
  const circleDasharray = `${(
  calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
@@ -140,7 +138,6 @@ function setRemainingPathColor(timeLeft) {
 function increaseScore()
 {
   
-  
 }
 function correctAnswer() {
   let userAnswerInt = parseInt(document.getElementById("answerField").value);
@@ -148,15 +145,12 @@ function correctAnswer() {
   const correctAnswer = josephusProblem(numberOfParticipants);
   let resultLabel = document.getElementById("resultLabel");
   
-
    for(let i = 0; i < 1; i++){
     score++;
     }
 
-
   if(userAnswerInt === correctAnswer){
     
-   
     document.getElementById("pointsLabel").innerHTML = score;
     resultLabel.innerHTML = "Correct";
     resultLabel.style.color = "green"
@@ -167,7 +161,6 @@ function correctAnswer() {
     document.getElementById("startNext").style.fontSize = "0.5rem"
     document.getElementById("restartY").setAttribute("class", "fas fa-hand-point-right");
     
-
   }
   if(userAnswerInt !== correctAnswer){
     resultLabel.innerHTML = "Incorrect";
@@ -175,10 +168,4 @@ function correctAnswer() {
     resultLabel.style.fontSize = "0.8rem";
     }
     
-
-   
-  
-
 }
-
-  

@@ -43,9 +43,3 @@ function natoAlphabet(){
     output.innerHTML = natoSpelling
     
 }
-
-
-
-
-
-
