@@ -10,24 +10,21 @@ const artist = document.querySelector('#artist')
 const cover = document.querySelector('#cover');
 const duration = document.querySelector('#duration');
 const darkmode = document.getElementById('darkmode');
+const shuffle = document.getElementById('shuffle')
 const siteTitle = document.getElementById('site-title');
 
 const songs = ['Hari Ukuntu','Switch It Up','Recognize','Soso','VXLENTINE','XO','No Wahala','Southy Love','Propeller','Only You', 'Exchange','Been That Way','Your Body','Just Dance (sped up)','Eko Miami','Back It Up','Bend It','CUFF IT','As Friends', 
-'Bandana','Bloody Samaritan','Bounce','Don\'t Rush','Tampa','Calm Down','Rackz got më','Preach','Pussy Power','WAIT FOR U','Rush','KU LO SA','MONALISA','Want You',
-'Peru','Soweto','Nzaza','Cold Outside','Okay','Pana','It’s Plenty','Sip','Must Be Sprung','Energy','Mad Over You','TLC','The Matter','Might Not','Starboy','Streatham','Titanium', 
+'Bandana','Bloody Samaritan','Bounce','Don\'t Rush','Tampa','Calm Down','Rackz got më','Preach','P Power','WAIT FOR U','Rush','KU LO SA','MONALISA','Want You',
+'Peru','Soweto','Nzaza','Cold Outside','Okay','Pana','It’s Plenty','Sip','Must Be Sprung','Energy','Mad Over You','TLC','Might Not','Starboy','Streatham','Titanium', 
 'AG Baby','Vibration','Hold Yuh','Lost In Ya Love','Kontrol','Damages', 'After Hours','The Hills', 'Touchin Lovin','How It Is','U Wit Me','Strike A Pose','Gyal You A Party Animal','SAD!'];
 
 
 
 const artists = ['King James','Pooh Shiesty x G Herbo x No More Heroes', 'PARTYNEXTDOOR (ft Drake)','Omah Lay','Ayo Kuru','Jay-O','1da Banton','Peruzzi (ft Fireboy DML)','Dave & BNXN', 'PARTYNEXTDOOR', "Bryson Tiller", 'Bryson Tiller','Basketmouth (ft Buju)', 'Lady Gaga', 'Maleek Berry','Ms Banks (ft Geko)', 'Maleek Berry','Beyonce',
 'Gabzy', 'Fireboy DML (ft Asake)','Ayra Starr','Ruger','Young T & Bugsey (ft Headie One)','Cico P','Rema','Yeat','Drake','Gunna (ft Drake)','Future (ft Tems & Drake)','Ayra Starr',
-'Oxlaide','LOJAY X SARZ','Fireboy DML (ft Asake)','Oxlaide','Fireboy DML','Victony','Asake','Timaya (ft Buju)','Tekno','Burna Boy','Joeboy','Gabzy','Wizkid (ft Skepta)','Runtown','Sy Ari da Kid',
-'Wizkid','Belly (ft The Weeknd)','The Weeknd','Dave','Dave','Adekunle Gold','Fireboy DMl','Gyptian','Chris Brown','Maleek Berry','TEMS','The Weeknd','The Weeknd','The Weeknd','Trey Songz (ft. Nicki Minaj)',
-'Young Thug','Drake','Young T & Bugsey (ft Aitch)','Charly Black','XXXTENTACION'];//
-
-
-//Shuffle Button
-
+'Oxlaide','LOJAY X SARZ','Oxlaide','Fireboy DML','Victony','Asake','Timaya (ft Buju)','AG Baby','Tekno','Burna Boy','Joeboy','Gabzy','Wizkid (ft Skepta)','Runtown','Sy Ari da Kid',
+,'Belly (ft The Weeknd)','The Weeknd','Dave','Dave','Adekunle Gold','Fireboy DMl','Gyptian','Chris Brown','Maleek Berry','TEMS','The Weeknd','The Weeknd','Trey Songz (ft. Nicki Minaj)',
+'Young Thug','Drake','Young T & Bugsey (ft Aitch)','Charly Black','XXXTENTACION'];
 
 // keep track of songs 
 
@@ -56,6 +53,7 @@ function playSong(){
     audio.play()
     
 }   
+
 // Pause Song
 function pauseSong(){
     musicContaier.classList.remove('play')
@@ -64,16 +62,12 @@ function pauseSong(){
     audio.pause();
 }
 
-
 // Previous Song
-
 function backSong(){
     songIndex--
-
     if(songIndex < 0){
         songIndex = songs.length - 1;
     }
-
     loadSong(songs[songIndex])
     playSong()
 }
@@ -81,28 +75,28 @@ function backSong(){
 // Next Song
 
 function nextSong(){
-    
-    
-    songIndex++
-    if(songIndex > songs.length -1){
-        songIndex = 0;
+    // shuffles what song is played next.
+    if(shuffle.checked == true){
+        songIndex = Math.floor(songs.length * Math.random())
+        document.getElementById('toggleShuffle').innerText = 'Shuffle Off';
     }
-    
+    else {
+        songIndex++
+        if(songIndex > songs.length -1){
+            songIndex = 0;
+        }
+    }
     loadSong(songs[songIndex])
     playSong()
 }
 
-
 // Update Progress Bar
-
 function updateProgress(e){
     const {duration, currentTime} = e.srcElement;
     const progressPercent = (currentTime/duration) * 100;
     progress.style.width = `${progressPercent}%`
     
 }
-
-
 
 // Set the Progress bar to whatever the current time is
 function setProgress(e){
@@ -132,19 +126,21 @@ nextButton.addEventListener('click', nextSong)
 audio.addEventListener('timeupdate',updateProgress)
 progressContainer.addEventListener('click', setProgress)
 
-// Playing the next song after the current one finsishes playing.
+// autoplay the next song after current one ends
 audio.addEventListener('ended' ,nextSong)
 
 audio.addEventListener('timeupdate', (event) => {
     const currentTime = Math.floor(audio.currentTime);
     const duration = Math.floor(audio.duration);
     duration.innerText = `${currentTime}`
+    console.log(currentTime + "/" + duration/60)
 }, true);
 
-// handle Volume
+// handle Volume, add volume button on the next update
 //implement on next update
-// handle dark mode 
 
+
+// handle dark mode 
 function handleDarkMode(){
     if(darkmode.checked == true){
     siteTitle.style.color = 'white';
@@ -153,9 +149,11 @@ function handleDarkMode(){
     title.style.color = 'white'
     artist.style.color = 'white'
     document.getElementById('musicInfo').style.backgroundColor = 'transparent'
-    document.getElementById('toggleMessage').innerHTML = 'Turn Dark Mode OFF';
+    document.getElementById('toggleMessage').innerText = 'Turn Dark Mode OFF';
     document.getElementById('toggleMessage').style.color = 'grey'
     document.getElementById('madeby').style.color = 'grey'
+    document.getElementById('toggleShuffle').style.color = 'grey'
+   
 
 // song Titles
     } else {

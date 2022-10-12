@@ -1,7 +1,5 @@
 
-
-
-// works out the largest binary number in a number
+// works out the largest binary number in a Given number
 function largestBinaryNumber(number){
   let largestNumber;
   for(let i= 1; i <= number;){
@@ -37,8 +35,6 @@ function start(){
   label.innerHTML = randomNumber(20);
   startTimer();
 }
-
-
 
 // HANDLING THE COUNTDOWN TIMER:
 
@@ -135,10 +131,6 @@ function setRemainingPathColor(timeLeft) {
   }
 }
 
-function increaseScore()
-{
-  
-}
 function correctAnswer() {
   let userAnswerInt = parseInt(document.getElementById("answerField").value);
   const numberOfParticipants = parseInt(document.getElementById("people").innerHTML);

@@ -131,7 +131,7 @@ body {
 }
 
 .progress-container {
-    background-color: red;
+    background-color: black;
     border-radius: 5px;
     cursor: pointer;
     margin: 10px 0;
@@ -141,7 +141,7 @@ body {
 }
 
 .progress{
-    background-color: blue;
+    background-color: pink;
     border-radius: 5px;
     height: 100%;
     width: 0%;
