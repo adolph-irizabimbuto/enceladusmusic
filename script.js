@@ -78,12 +78,13 @@ function nextSong(){
     // shuffles what song is played next.
     if(shuffle.checked == true){
         songIndex = Math.floor(songs.length * Math.random())
-        document.getElementById('toggleShuffle').innerText = 'Shuffle Off';
+        document.getElementById('toggleShuffle').innerText = 'Shuffle ON';
     }
     else {
         songIndex++
         if(songIndex > songs.length -1){
             songIndex = 0;
+            document.getElementById('toggleShuffle').innerText = 'Shuffle OFF';
         }
     }
     loadSong(songs[songIndex])
