@@ -1,178 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+  <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>azula</title>
-    <link rel="icon" type="image/x-icon" href="/assets/images/site/test.png">
-    <link rel="stylesheet" href="home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Enceladus</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
-    
-    <style>
-
-    .navbar {
-    background-color: #3d6bf5;
-    color: white;
-    background-image: none;
-    }
-    
-    .nav.navbar-nav.navbar-light li a {
-        color: white;
-    }
-    .custom-toggler.navbar-toggler {
-        border-color: lightgreen;
-    }
-
-
-    nav.div{
-        background-color: azure;
-    }
-    div>a{
-        width: 9.9rem;
-        height: 3rem;
-        margin: -0.7rem 0 0 -1.22rem;
-        font-weight: 20rem;
-        padding-top: 10rem;
-        background-color: red;
-    }
-   
-     p {
-         margin-bottom:  - 5rem;
-     }
-    </style>
-
-</head>
-
-
-<body>
-
-    <nav class="navbar navbar-expand-md bg-blue navbar-dark w-100">
-        <a class="navbar-brand" href="index.html">azula</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse w-100" id="collapsibleNavbar">
-                <ul class="nav navbar-nav nav-fill w-100" >
-                    <li><a class = "nav-item nav-link px-2"href="music.html">Enceladus Music</a></li>
-                    <li><a class = "nav-item nav-link px-2"href="josephus.html">The Josephus Problem</a></li>
-                    <li><a class = "nav-item nav-link px-2"href="poerty.html">Poetry</a></li>
-                    <li><a class = "nav-item nav-link px-2"href="writting.html">Writting</a></li>
-                    <li><a class = "nav-item nav-link px-2"href="nato.html">Nato Alphabet</a></li>
-                    <li><a class = "nav-item nav-link px-2"href="binary.html">Binary Converter</a></li>
-                </ul>
-            
-        </div>  
-    </nav>
-
-    <div class="container" id="title">
-        <div class="jumbotron">
-            <h2>azula</h2> 
+    <link rel="stylesheet" type="text/css" href="style3.css">
+  </head>
+  <body>
+    <section class="hero is-medium">
+      <div class="hero-body">
+      
+      </div>
+      <div class="columns" style="color: white;">
+        <div class="column" style="margin-right: -100rem;">
         </div>
-        <p> 
-            Inspired by azula,
-            <br><br>
-            an ode to the things i fell in love with; computing, astronomy, mathematics and writting.
-            <br>
-            an ever growing collection of web-applications inspired by my passions
+        <div class="column">
+            <div class="container">
+                <h1 class="title is-1 ">Enceladus</h1>
+                <script type="application/javascript">
+                  function getIP(json) {
+                    document.write("Welcome ", "\<b>",json.ip,"\</b>");
+                  }
+                </script>
+                 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+                <p> 
+                  Inspired by space,
+                  <br><br>
+                  an ode to the things i fell in love with; computing, astronomy, mathematics and writting.
+                  <br>
+                  an ever growing collection of web-applications inspired by my passions
+              </p>      
+            </div>
+        </div>
+    </section>
+
+    <section id="parallax-1" class="hero is-medium ">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-10 is-offset-6" class="d-flex justify-content-around">
+              <hr class="content-divider">
+              <a href="music.html" class="button is-blue is-medium is-inverted">Music&ensp;<i class="fad fa-chevron-right"></i></a>
+              <a href="josephus.html" class="button is-blue is-medium is-inverted">The Josephus Ploblem&ensp;<i class="fad fa-chevron-right"></i></a>
+              <a href="poerty.html" class="button is-blue is-medium is-inverted">Poems&ensp;<i class="fad fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="parallax-2" class="hero is-medium ">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-10" class="d-flex justify-content-around">
+              
+              <hr class="content-divider">
+              <a href="writting.html" class="button is-blue is-medium is-inverted">Writting&ensp;<i class="fad fa-chevron-right"></i></a>
+              <a href="binary.html" class="button is-blue is-medium is-inverted">Binary Converter&ensp;<i class="fad fa-chevron-right"></i></a>
+              <a href="nato.html" class="button is-blue is-medium is-inverted">Nato Alphabet&ensp;<i class="fad fa-chevron-right"></i></a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta va" style="color: white;">
+      <div class="content has-text-centered">
+        <p>
+          by iris
         </p>
-        
+        <script type="application/javascript">
+          function getIP(json) {
+            document.write("Hello ", json.ip, ", welcome to azula :)");
+          }
+        </script>
+      </div>
+    </section>
 
-    <script type="application/javascript">
-    function getIP(json) {
-      document.write("Hello ", json.ip, ", welcome to azula :)");
-    }
-  </script>
-   <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
-    </div>
-    
-    <div id="mainPanel"> 
-    <div class="d-flex flex-wrap flex-sm-row mb-3  justify-content-around " id="dashboard">
-        <div class="p-2 ">
-            <div class="card" id="link-card">
-                <img class="card-img-top border-bottom" src="/assets/images/site/music.png" alt="image" id="img">
-                <div class="card-body">
-                    <h6 class="card-title">Enceladus Music</h6>
-                    <p class="crad-text">
-                    music
-                    </p>
-                    <a href="music.html" style="display: inline-block " class="btn btn-primary center">listen</a>
-                </div>
-            </div>  
-        </div>
+  </body>
 
-        <div class="p-2">
-            <div class="card border-bottom" id="link-card">
-                <img class="card-img-top border-bottom" src="/assets/images/site/josephus.jpg" alt="image" id="img">
-                <div class="card-body">
-                    <h6 class="card-title">Josephus Problem</h6>
-                    <p class="crad-text">
-                   find the fomula
-                    </p>
-                    <a href="josephus.html" class="btn btn-primary">play</a>
-                </div>
-            </div> 
-            
-        </div>
-    
-        <div class="p-2 ">
-           <div class="card" id="link-card">
-            <img class="card-img-top rounded border-bottom" src="/assets/images/site/poetry.jpg" alt="image" id="img">
-                <div class="card-body">
-                    <h6 class="card-title">Poerty</h6>
-                    <p class="crad-text">
-                    me :)
-                    </p>
-                    <a href="poerty.html" class="btn btn-primary" style="margin-bottom: -2.4rem;">See</a>
-                </div>
-            </div>  
-        </div>
-
-        <div class="p-2 " >
-            <div class="card" id="link-card">
-                <img class="card-img-top border-bottom" src="/assets/images/site/writting.png" alt="image" id="img">
-                <div class="card-body" style="margin-bottom: -4rem;">
-                    <h6 class="card-title">Writting</h6>
-                    <p class="crad-text">
-                    opinion pieces
-                    </p>
-                    <a href="writting.html" class="btn btn-primary" style="margin-bottom: -2.4rem; ">Read</a>
-                </div>
-            </div> 
-        </div>
-    
-        <div class="p-2 ">
-           <div class="card" id="link-card">
-                <img class="card-img-top border-bottom" src="/assets/images/site/nato.jpeg" alt="image" id="img">
-                <div class="card-body">
-                    <h6 class="card-title">Nato Alphabet</h6>
-                    <p class="crad-text" style="font-size: 0.5rem;">
-                    convert words into the nato alphabet
-                    </p>
-                    <a href="nato.html" class="btn btn-primary" style="margin-bottom: 9rem;">Convert</a>
-                </div>
-            </div>  
-        </div>
-
-        <div class="p-2 " >
-            <div class="card" id="link-card">
-                <img class="card-img-top border-bottom" src="/assets/images/site/binary.png" alt="image" id="img">
-                <div class="card-body">
-                    <h6 class="card-title">Binary Conveter</h6>
-                    <p class="crad-text" style="font-size: 0.5rem;">
-                    convert numbers into binary form
-                    </p>
-                    <a href="binary.html" class="btn btn-primary" > convert</a>
-                </div >
-            </div> 
-        </div>
-    </div>
-    </div>
-
-</body>
 </html>
